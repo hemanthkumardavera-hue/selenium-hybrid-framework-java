@@ -26,13 +26,21 @@ public class BaseTest {
 
         config = new ConfigReader();
 
-      //  System.out.println( "Running on Browser : " + browser);
-        
+        // Priority:
+        // 1. Jenkins/Maven System Property
+        // 2. TestNG Parameter
+        String browserName =
+                System.getProperty(
+                        "browser",
+                        browser);
+
         logger.info(
-        	    "Launching Browser: {}", browser);
+                "Launching Browser : {}",
+                browserName);
 
         WebDriver driver =
-                DriverFactory.createDriver(browser);
+                DriverFactory.createDriver(
+                        browserName);
 
         DriverManager.setDriver(driver);
 
@@ -41,27 +49,24 @@ public class BaseTest {
                      .window()
                      .maximize();
 
-        DriverManager.getDriver().get(
-                config.getProperty("url"));
+        DriverManager.getDriver()
+                     .get(
+                       config.getProperty("url"));
 
-        //System.out.println("Current URL : " + DriverManager.getDriver().getCurrentUrl());
-        
         logger.info(
                 "Current URL : {}",
-                DriverManager.getDriver().getCurrentUrl());
-        
-       // System.out.println("Thread ID : "  + Thread.currentThread().getId());
-        
+                DriverManager.getDriver()
+                             .getCurrentUrl());
+
         logger.info(
                 "Thread ID : {}",
-                Thread.currentThread().getId());
+                Thread.currentThread()
+                      .getId());
 
-      //  	System.out.println("Browser : " + browser);
         logger.info(
                 "Browser : {}",
-                browser);
+                browserName);
     }
-
     public WebDriver getDriver() {
 
         return DriverManager.getDriver();
