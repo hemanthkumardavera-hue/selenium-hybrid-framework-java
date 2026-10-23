@@ -3,7 +3,9 @@ package com.qa.utilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 
 public class DriverFactory {
 
@@ -18,11 +20,19 @@ public class DriverFactory {
             break;
 
         case "edge":
-            driver = new EdgeDriver();
+        	EdgeOptions options = new EdgeOptions();
+
+        	options.addArguments("--remote-allow-origins=*");
+
+        	driver = new EdgeDriver(options);
             break;
 
         case "firefox":
-            driver = new FirefoxDriver();
+        	FirefoxOptions options1 = new FirefoxOptions();
+
+        	options1.addArguments("-private");
+
+        	driver = new FirefoxDriver(options1);
             break;
 
         default:
