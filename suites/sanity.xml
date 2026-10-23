@@ -1,0 +1,24 @@
+<!DOCTYPE suite SYSTEM
+"https://testng.org/testng-1.0.dtd">
+
+<suite name="Sanity Suite">
+
+    <test name="Sanity Tests">
+
+        <groups>
+            <run>
+                <include name="sanity"/>
+            </run>
+        </groups>
+
+        <classes>
+
+            <class name="com.qa.tests.LoginTest"/>
+
+            <class name="com.qa.tests.LogoutTest"/>
+
+        </classes>
+
+    </test>
+
+</suite>

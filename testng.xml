@@ -1,0 +1,28 @@
+<suite
+    name="Automation Suite"
+    parallel="tests"
+    thread-count="2">
+
+    <test name="Login Tests">
+
+        <classes>
+
+            <class name=
+             "com.qa.tests.LoginTest"/>
+
+        </classes>
+
+    </test>
+
+    <test name="Logout Tests">
+
+        <classes>
+
+            <class name=
+             "com.qa.tests.LogoutTest"/>
+
+        </classes>
+
+    </test>
+
+</suite>

@@ -1,0 +1,80 @@
+package com.qa.base;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import com.qa.utilities.ConfigReader;
+import com.qa.utilities.DriverFactory;
+import com.qa.utilities.DriverManager;
+
+public class BaseTest {
+	
+	private static final Logger logger =
+	        LogManager.getLogger(BaseTest.class);
+
+
+    protected ConfigReader config;
+
+    @BeforeMethod
+    @Parameters("browser")
+    public void setUp(
+            @Optional("chrome") String browser) {
+
+        config = new ConfigReader();
+
+      //  System.out.println( "Running on Browser : " + browser);
+        
+        logger.info(
+        	    "Launching Browser: {}", browser);
+
+        WebDriver driver =
+                DriverFactory.createDriver(browser);
+
+        DriverManager.setDriver(driver);
+
+        DriverManager.getDriver()
+                     .manage()
+                     .window()
+                     .maximize();
+
+        DriverManager.getDriver().get(
+                config.getProperty("url"));
+
+        //System.out.println("Current URL : " + DriverManager.getDriver().getCurrentUrl());
+        
+        logger.info(
+                "Current URL : {}",
+                DriverManager.getDriver().getCurrentUrl());
+        
+       // System.out.println("Thread ID : "  + Thread.currentThread().getId());
+        
+        logger.info(
+                "Thread ID : {}",
+                Thread.currentThread().getId());
+
+      //  	System.out.println("Browser : " + browser);
+        logger.info(
+                "Browser : {}",
+                browser);
+    }
+
+    public WebDriver getDriver() {
+
+        return DriverManager.getDriver();
+    }
+
+    @AfterMethod
+    public void tearDown() {
+
+        if (DriverManager.getDriver() != null) {
+
+            DriverManager.getDriver().quit();
+
+            DriverManager.unload();
+        }
+    }
+}
