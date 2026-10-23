@@ -66,7 +66,19 @@ public class BaseTest {
         logger.info(
                 "Browser : {}",
                 browserName);
+        logger.info(
+                "Browser Parameter Received : {}",
+                browser);
+        logger.info(
+                "System Browser : {}",
+                System.getProperty("browser"));
+        logger.info(
+                "Driver Created : {}",
+                driver);
+        
+        
     }
+    
     public WebDriver getDriver() {
 
         return DriverManager.getDriver();
