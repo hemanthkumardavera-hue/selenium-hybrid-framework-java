@@ -19,7 +19,7 @@ public class BaseTest {
 
     protected ConfigReader config;
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     @Parameters("browser")
     public void setUp(
             @Optional("chrome") String browser) {
