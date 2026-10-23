@@ -31,9 +31,14 @@ public class BaseTest {
         // 2. TestNG Parameter
         logger.info("********** SETUP STARTED **********");
         String browserName =
-                System.getProperty(
-                        "browser",
-                        browser);
+                System.getProperty("browser");
+
+        if(browserName == null ||
+           browserName.isEmpty())
+        {
+            browserName = browser;
+        }
+
 
         logger.info(
                 "Launching Browser : {}",

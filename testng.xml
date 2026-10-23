@@ -3,13 +3,14 @@
     parallel="tests"
     thread-count="2">
 
+    <parameter
+        name="browser"
+        value="chrome"/>
+
     <test name="Login Tests">
 
         <classes>
-
-            <class name=
-             "com.qa.tests.LoginTest"/>
-
+            <class name="com.qa.tests.LoginTest"/>
         </classes>
 
     </test>
@@ -17,10 +18,7 @@
     <test name="Logout Tests">
 
         <classes>
-
-            <class name=
-             "com.qa.tests.LogoutTest"/>
-
+            <class name="com.qa.tests.LogoutTest"/>
         </classes>
 
     </test>
