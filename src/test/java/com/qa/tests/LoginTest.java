@@ -36,6 +36,10 @@ public class LoginTest extends BaseTest {
 
         LoginPage loginPage =
                 new LoginPage(getDriver());
+        
+        logger.info(
+                "Driver In Test = {}",
+                getDriver());
 
         HomePage homePage =
                 loginPage.login(

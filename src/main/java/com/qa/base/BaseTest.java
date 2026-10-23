@@ -29,6 +29,7 @@ public class BaseTest {
         // Priority:
         // 1. Jenkins/Maven System Property
         // 2. TestNG Parameter
+        logger.info("********** SETUP STARTED **********");
         String browserName =
                 System.getProperty(
                         "browser",
@@ -41,8 +42,13 @@ public class BaseTest {
         WebDriver driver =
                 DriverFactory.createDriver(
                         browserName);
+        logger.info("Driver Created = {}", driver);
 
         DriverManager.setDriver(driver);
+        
+        logger.info(
+                "DriverManager Value = {}",
+                DriverManager.getDriver());
 
         DriverManager.getDriver()
                      .manage()
