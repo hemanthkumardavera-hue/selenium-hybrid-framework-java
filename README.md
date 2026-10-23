@@ -94,3 +94,10 @@ Tests
 - Hybrid Framework
         ↓
 - Scalable Framework
+
+## Framework Features
+
+- Cross Browser Execution
+- Parallel Execution
+- Extent Reports
+- Log4j2 Logging
