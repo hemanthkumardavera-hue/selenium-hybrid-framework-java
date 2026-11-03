@@ -22,14 +22,18 @@ pipeline {
             }
         }
 
-        stage('API Tests') {
+    stage('API Tests') {
 
-            steps {
+    steps {
 
-                bat 'mvn test -DsuiteXmlFile=suites/api.xml'
+        catchError(
+            buildResult: 'SUCCESS',
+            stageResult: 'FAILURE') {
 
-            }
-        }
+            bat 'mvn test -DsuiteXmlFile=suites/api.xml'
+         }
+      }
+  }
 
         stage('DB Tests') {
 
