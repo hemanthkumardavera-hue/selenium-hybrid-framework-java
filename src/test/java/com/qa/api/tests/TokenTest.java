@@ -11,13 +11,9 @@ public class TokenTest {
     @Test
     public void generateToken() {
 
-        String payload =
-                """
-                {
-                  "email": "eve.holt@reqres.in",
-                  "password": "cityslicka"
-                }
-                """;
+    	String payload =
+    	        "{\"email\":\"eve.holt@reqres.in\","
+    	      + "\"password\":\"cityslicka\"}";;
 
         Response response =
 
