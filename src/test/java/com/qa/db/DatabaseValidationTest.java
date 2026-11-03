@@ -1,6 +1,7 @@
 package com.qa.db;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
@@ -34,5 +35,45 @@ public class DatabaseValidationTest {
         }
 
         connection.close();
+    }
+    
+    @Test
+    public void verifySpecificUser()
+            throws Exception {
+
+        Connection connection =
+                DBUtils.getConnection();
+
+        PreparedStatement statement =
+                connection.prepareStatement(
+                        "SELECT * FROM users WHERE id = ?");
+
+        statement.setInt(1, 101);
+
+        ResultSet rs =
+                statement.executeQuery();
+
+        Assert.assertTrue(rs.next());
+
+        String userName =
+                rs.getString("username");
+
+        Assert.assertEquals(
+                userName,
+                "Hemanth");
+
+        connection.close();
+    }
+    
+    @Test
+    public void verifyUserInDB()
+            throws Exception {
+
+        String username =
+                DBUtils.getUserName(101);
+
+        Assert.assertEquals(
+                username,
+                "Hemanth");
     }
 }

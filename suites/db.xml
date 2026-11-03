@@ -1,0 +1,14 @@
+<suite name="Database Suite">
+
+    <test name="Database Validation">
+
+        <classes>
+
+            <class name=
+            "com.qa.db.DatabaseValidationTest"/>
+
+        </classes>
+
+    </test>
+
+</suite>
