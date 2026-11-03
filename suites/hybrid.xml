@@ -22,4 +22,36 @@
 
     </test>
 
+</suite><suite name="Hybrid Framework">
+
+    <test name="API">
+
+        <classes>
+
+            <class name="com.qa.api.tests.AuthenticationTest"/>
+
+        </classes>
+
+    </test>
+
+    <test name="Database">
+
+        <classes>
+
+            <class name="com.qa.db.DatabaseValidationTest"/>
+
+        </classes>
+
+    </test>
+
+    <test name="UI">
+
+        <classes>
+
+            <class name="com.qa.tests.LoginTest"/>
+
+        </classes>
+
+    </test>
+
 </suite>
