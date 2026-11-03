@@ -6,7 +6,6 @@ import org.testng.annotations.Test;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-
 import com.qa.base.BaseTest;
 import com.qa.pages.HomePage;
 import com.qa.pages.LoginPage;
