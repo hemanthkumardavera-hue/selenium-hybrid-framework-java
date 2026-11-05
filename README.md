@@ -1,6 +1,6 @@
 # 🚀 Enterprise Hybrid Automation Framework
 
-![Java](https://img.shields.io/badge/Java-21-orange)
+![Java](https://img.shields.io/badge/Java-25-orange)
 ![Selenium](https://img.shields.io/badge/Selenium-4.x-green)
 ![REST%20Assured](https://img.shields.io/badge/REST%20Assured-API%20Testing-blue)
 ![TestNG](https://img.shields.io/badge/TestNG-Framework-red)
@@ -495,6 +495,32 @@ Jenkinsfile
 
 ---
 
+# 📊 Framework Statistics
+
+✅ 3 Automation Frameworks
+   - UI
+   - API
+   - Database
+
+✅ 4 Test Suites
+   - Smoke
+   - Sanity
+   - Regression
+   - Hybrid
+
+✅ 3 Jenkins Jobs
+   - UI
+   - API
+   - Database
+
+✅ 1 Jenkins Pipeline
+
+✅ 15+ Utility Classes
+
+✅ Cross Browser Architecture
+
+✅ Thread Safe Execution
+
 # 👨‍💻 Author
 
 ### Davera Hemanth Kumar
@@ -564,3 +590,33 @@ Successfully designed and implemented a scalable Enterprise Hybrid Automation Fr
 ✅ Reusable Utilities
 
 ✅ Enterprise Framework Architecture
+
+# 💡 Business Value
+
+This framework demonstrates real-world automation engineering practices including:
+
+- UI Automation
+- API Automation
+- Database Validation
+- CI/CD Implementation
+- Reporting and Logging
+- Cross Browser Architecture
+- Scalable Framework Design
+
+The framework is capable of validating end-to-end business workflows across UI, API and Database layers.
+
+
+# 📸 Framework Screenshots
+
+## Jenkins Pipeline
+
+automation-framework\ProjectLevel\screenshots\Automation_Pipeline.png
+
+## Extent Report
+
+automation-frameworkProjectLevelscreenshots\extent-report.png
+
+## Jenkins Dashboard
+
+automation-framework\ProjectLevel\screenshots\jenkins-dashboard.png
+
